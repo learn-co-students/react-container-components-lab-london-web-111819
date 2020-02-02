@@ -27,14 +27,14 @@ class SearchableMovieReviewsContainer extends React.Component {
     render(){
         const {searchResults} = this.state
         return(
-            <div>
+            <React.Fragment>
                 <form onSubmit={(event)=>this.initiateSearch(event)}>
                     <input onChange={(e)=>this.updateSearchTerm(e.target.value)} type='text' placeholder='search term...'></input>
                     <button>Search!</button>
                 </form>
                 <div className='searchable-movie-reviews'>{searchResults.map((item,index)=><MovieReviews key={index} review={item}/>)}
                 </div>
-            </div>
+            </React.Fragment>
         )
     }
 }
